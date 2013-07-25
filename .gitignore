@@ -1,0 +1,28 @@
+
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
+
+*.jar
+*.war
+
+# Eclipse
+.classpath
+.project
+.settings
+.cache
+
+target/
+
+# Ignore integration tests for now
+src/intg
