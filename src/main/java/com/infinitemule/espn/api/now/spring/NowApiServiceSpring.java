@@ -1,6 +1,7 @@
+/*
+ * Spring ESPN
+ */
 package com.infinitemule.espn.api.now.spring;
-
-
 
 
 import java.util.Map;
@@ -24,81 +25,58 @@ public class NowApiServiceSpring extends    ApiServiceSpring
                                  implements NowApiService {
 
     
-  /**
-   * 
-   */
   public NowApiResponse latest() {
-
-    return latest(10, 0);
-    
+    return latest(10, 0);    
   }
   
 
-  public NowApiResponse latest(Integer limit) {
-    
-    return latest(limit, 0);
-    
+  public NowApiResponse latest(Integer limit) {    
+    return latest(limit, 0);   
   }
   
   public NowApiResponse latest(Integer limit, Integer offset) {
     
-    String url = 
-        createUrl(Now.now)
-                 .queryParams(createPageableParams(limit, offset))
-                 .toString();
-    
-    return callService(url, NowApiResponse.class); 
+    return request(
+      new NowApiRequest()
+          .now().limit(limit).offset(offset));
 
   }
 
+  
   
   public NowApiResponse top() {
-
-    return top(10, 0);
-    
+    return top(10, 0);    
   }
   
 
-  public NowApiResponse top(Integer limit) {
-    
-    return latest(limit, 0);
-    
+  public NowApiResponse top(Integer limit) {    
+    return top(limit, 0);    
   }
 
   
   public NowApiResponse top(Integer limit, Integer offset) {
     
-    String url = 
-        createUrl(Now.top)
-                 .queryParams(createPageableParams(limit, offset))
-                 .toString();
-    
-    return callService(url, NowApiResponse.class); 
+    return request(
+        new NowApiRequest()
+            .top().limit(limit).offset(offset));
 
   }
 
   public NowApiResponse popular() {
-
-    return popular(10, 0);
-    
+    return popular(10, 0);    
   }
   
 
-  public NowApiResponse popular(Integer limit) {
-    
-    return latest(limit, 0);
-    
+  public NowApiResponse popular(Integer limit) {    
+    return popular(limit, 0);    
   }
 
   
   public NowApiResponse popular(Integer limit, Integer offset) {
-    
-    String url = 
-        createUrl(Now.popular)
-                 .queryParams(createPageableParams(limit, offset))
-                 .toString();
-    
-    return callService(url, NowApiResponse.class); 
+
+    return request(
+        new NowApiRequest()
+            .popular().limit(limit).offset(offset));
 
   }
   
@@ -111,7 +89,8 @@ public class NowApiServiceSpring extends    ApiServiceSpring
     
     return callService(url, NowApiResponse.class);
   }
-      
+  
+  
   
   private Map<String, String> createQueryParams(NowApiRequest request) {
     
