@@ -63,17 +63,23 @@ public class ApiUrls {
     
     public class Params {
       
-      public static final String city  = "city";
-      public static final String sport = "sport";
-      public static final String dates = "dates";
+      public static final String city    = "city";
+      public static final String sport   = "sport";
+      public static final String league  = "league";
+      public static final String dates   = "dates";
+      public static final String insider = "insider";
+      public static final String disable = "disable";
+      public static final String region  = "region";
       
+      public static final String id         = "id";
+      public static final String teamId     = "teamId";
+      public static final String athleteId  = "athleteId";
     }
     
     public static final String news         = "/news";
     public static final String headlines    = "/news/headlines";
     public static final String topHeadlines = "/news/headlines/top";
-    
-    public static final String byStory = "/news/{id}";
+        
     
     public static final String allCities  = "/cities";
     public static final String byCity     = "/cities/{city}";
@@ -84,6 +90,13 @@ public class ApiUrls {
     public static final String allFantasy     = "/fantasy";
     public static final String byFantasySport = "/fantasy/{sport}";
     
+    public static final String allSports        = "/sports";
+    public static final String bySport          = "/sports/{sport}";
+    public static final String bySportAndLeague = "/sports/{sport}/{league}";
+    public static final String byTeam           = "/sports/{sport}/{league}/teams/{teamId}";
+    public static final String byAthlete        = "/sports/{sport}/{league}/athletes/{athleteId}";
+    public static final String byStory          = "/sports/news/{id}";
+    
   }
   
   
@@ -93,7 +106,7 @@ public class ApiUrls {
   
   public class Sports {
     
-    public static final String all = "/sports";
+    public static final String all             = "/sports";
     public static final String byName          = "/sports/{sport}";
     public static final String byNameAndLeague = "/sports/{sport}/{league}";
     

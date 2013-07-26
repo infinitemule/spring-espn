@@ -18,15 +18,15 @@ public class HeadlinesApiServiceSpring extends    ApiServiceSpring
   
   
   public HeadlinesApiResponse newsForAllCities() {
-    return request(new HeadlinesApiRequest().news().forAllCities());
+    return request(new HeadlinesApiRequest().news().forCities());
   }
   
   public HeadlinesApiResponse headlinesForAllCities() {
-    return request(new HeadlinesApiRequest().headlines().forAllCities());
+    return request(new HeadlinesApiRequest().headlines().forCities());
   }
 
   public HeadlinesApiResponse topHeadlinesForAllCities() {
-    return request(new HeadlinesApiRequest().topHeadlines().forAllCities());
+    return request(new HeadlinesApiRequest().topHeadlines().forCities());
   }
 
  
