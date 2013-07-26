@@ -35,6 +35,7 @@ public class HeadlinesApiRequest extends ApiRequest {
   
   public HeadlinesApiRequest forCity(City city) {
     setMethod(Headlines.byCity + getType());
+    setCity(city);
     return this;
   }
 
