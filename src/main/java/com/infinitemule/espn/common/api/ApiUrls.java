@@ -63,7 +63,9 @@ public class ApiUrls {
     
     public class Params {
       
-      public static final String city = "city";
+      public static final String city  = "city";
+      public static final String sport = "sport";
+      public static final String dates = "dates";
       
     }
     
@@ -76,7 +78,11 @@ public class ApiUrls {
     public static final String allCities  = "/cities";
     public static final String byCity     = "/cities/{city}";
     
+    public static final String espnW        = "/espnw";
+    public static final String espnMagazine = "/magazine";
     
+    public static final String allFantasy     = "/fantasy";
+    public static final String byFantasySport = "/fantasy/{sport}";
     
   }
   

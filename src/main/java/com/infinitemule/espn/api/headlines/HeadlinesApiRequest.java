@@ -5,28 +5,33 @@ import java.util.Map;
 import com.infinitemule.espn.common.api.ApiRequest;
 import com.infinitemule.espn.common.api.ApiUrls.Headlines;
 import com.infinitemule.espn.common.api.City;
+import com.infinitemule.espn.common.api.FantasySport;
 
 public class HeadlinesApiRequest extends ApiRequest {
 
   private String type;
   
-  private City city = null;
-  
+  private City city;
+  private FantasySport fantasySport;
     
-  public HeadlinesApiRequest news() {    
-    setType(Headlines.news);
+  private String dates;
+  
+  public HeadlinesApiRequest news() {        
+    setType(Headlines.news);    
     return this;
   }
   
   public HeadlinesApiRequest headlines() {    
-    setType(Headlines.headlines);
+    setType(Headlines.headlines);    
     return this;
   }
   
   public HeadlinesApiRequest topHeadlines() {    
-    setType(Headlines.topHeadlines);
+    setType(Headlines.topHeadlines);    
     return this;
   }
+  
+
   
   public HeadlinesApiRequest forAllCities() {
     setMethod(Headlines.allCities + getType());
@@ -34,11 +39,41 @@ public class HeadlinesApiRequest extends ApiRequest {
   }
   
   public HeadlinesApiRequest forCity(City city) {
-    setMethod(Headlines.byCity + getType());
-    setCity(city);
+    setMethod(Headlines.byCity + getType());    
     return this;
   }
 
+  
+  
+  public HeadlinesApiRequest forEspnW() {
+    setMethod(Headlines.espnW + getType());
+    return this;
+  }
+  
+  public HeadlinesApiRequest forEspnMagazine() {
+    setMethod(Headlines.espnMagazine + getType());
+    return this;
+  }
+  
+  
+  public HeadlinesApiRequest forAllFantasySports() {
+    setMethod(Headlines.allFantasy + getType());
+    return this;
+  }
+  
+  public HeadlinesApiRequest forFantasySport(FantasySport sport) {
+    setMethod(Headlines.byFantasySport + getType());
+    setFantasySport(sport);
+    return this;
+  }
+  
+  
+  public HeadlinesApiRequest date(String date) {
+    setDates(date.replaceAll("-", ""));
+    return this;
+  }
+  
+  
   @Override
   public Map<String, String> getUrlParams() {
     
@@ -46,6 +81,10 @@ public class HeadlinesApiRequest extends ApiRequest {
     
     if(isSpecified(getCity())) {
       urlParams.put(Headlines.Params.city, getCity().getId());
+    }
+    
+    if(isSpecified(getFantasySport())) {
+      urlParams.put(Headlines.Params.sport, getFantasySport().getId());
     }
     
     return urlParams;
@@ -56,6 +95,10 @@ public class HeadlinesApiRequest extends ApiRequest {
   public Map<String, String> getQueryParams() {
     
     Map<String, String> queryParams = super.getQueryParams();
+    
+    if(isSpecified(dates)) {
+      queryParams.put(Headlines.Params.dates, dates);
+    }
     
     queryParams.putAll(createPageableParams());
     
@@ -78,6 +121,21 @@ public class HeadlinesApiRequest extends ApiRequest {
   public void setCity(City city) {
     this.city = city;
   }
-    
-  
+
+  public FantasySport getFantasySport() {
+    return fantasySport;
+  }
+
+  public void setFantasySport(FantasySport fantasySport) {
+    this.fantasySport = fantasySport;
+  }
+
+  public String getDates() {
+    return dates;
+  }
+
+  public void setDates(String dates) {
+    this.dates = dates;
+  }
+        
 }
