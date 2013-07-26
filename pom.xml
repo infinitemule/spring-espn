@@ -3,12 +3,13 @@
   <groupId>com.infinitemule.espn</groupId>
   <artifactId>spring-espn</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   
   <properties>
     <slf4j.version>1.7.2</slf4j.version>
     <spring.version>3.2.0.RELEASE</spring.version>
     <spring-data.version>1.1.0.RELEASE</spring-data.version>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>    
   </properties>
   
   <dependencies>
