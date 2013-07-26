@@ -8,6 +8,9 @@ import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.infinitemule.espn.common.api.NewsCategory;
+import com.infinitemule.espn.common.api.Image;
+import com.infinitemule.espn.common.api.Video;
 
 /**
  * 
@@ -33,7 +36,7 @@ public class Feed {
   
   private Boolean premium;
   
-  private List<FeedCategory> categories = new ArrayList<FeedCategory>();  
+  private List<NewsCategory> categories = new ArrayList<NewsCategory>();  
   private List<Image>        images     = new ArrayList<Image>();
   private List<Video>        video      = new ArrayList<Video>();
   
@@ -158,11 +161,11 @@ public class Feed {
     this.links = links;
   }
 
-  public List<FeedCategory> getCategories() {
+  public List<NewsCategory> getCategories() {
     return categories;
   }
 
-  public void setCategories(List<FeedCategory> categories) {
+  public void setCategories(List<NewsCategory> categories) {
     this.categories = categories;
   }
 

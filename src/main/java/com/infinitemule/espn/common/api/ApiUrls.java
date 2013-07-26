@@ -13,6 +13,10 @@ public class ApiUrls {
   public static final String host    = "api.espn.com";
   public static final String version = "/v1";
 
+  /*
+   * Parameters common to all methods 
+   */
+  
   public class Common {
     
     public class Params {
@@ -26,7 +30,12 @@ public class ApiUrls {
   }
 
   
-   
+  /*
+   * Now API
+   * 
+   * http://developer.espn.com/docs/now
+   */
+  
   public class Now {
     
     public static final String now     = "/now";
@@ -43,14 +52,44 @@ public class ApiUrls {
       public static final String region  = "region";
             
     }
+      
+  }
+  
+  /*
+   * Headlines API
+   */
+  
+  public class Headlines {
+    
+    public class Params {
+      
+      public static final String city = "city";
+      
+    }
+    
+    public static final String news         = "/news";
+    public static final String headlines    = "/news/headlines";
+    public static final String topHeadlines = "/news/headlines/top";
+    
+    public static final String byStory = "/news/{id}";
+    
+    public static final String allCities  = "/cities";
+    public static final String byCity     = "/cities/{city}";
+    
+    
     
   }
+  
+  
+  /*
+   * Sports API
+   */
   
   public class Sports {
     
     public static final String all = "/sports";
-    public static final String byName          = all + "/{sport}";
-    public static final String byNameAndLeague = all + "/{sport}/{league}";
+    public static final String byName          = "/sports/{sport}";
+    public static final String byNameAndLeague = "/sports/{sport}/{league}";
     
   }
   

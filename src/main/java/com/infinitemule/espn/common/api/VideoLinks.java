@@ -1,6 +1,5 @@
-package com.infinitemule.espn.api.now;
+package com.infinitemule.espn.common.api;
 
-import com.infinitemule.espn.common.api.Link;
 
 public class VideoLinks {
 

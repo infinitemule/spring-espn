@@ -1,4 +1,5 @@
-package com.infinitemule.espn.api.now;
+package com.infinitemule.espn.common.api;
+
 
 public class Video {
 

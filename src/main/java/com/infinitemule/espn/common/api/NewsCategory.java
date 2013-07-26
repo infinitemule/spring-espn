@@ -1,9 +1,10 @@
-package com.infinitemule.espn.api.now;
+package com.infinitemule.espn.common.api;
+
 
 /**
  * 
  */
-public class FeedCategory {
+public class NewsCategory {
   
   private String uid;
   private String description;
@@ -27,7 +28,7 @@ public class FeedCategory {
   private Integer fantasyTeamId;   
   
   
-  public FeedCategory() {
+  public NewsCategory() {
     
   }
 

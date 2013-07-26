@@ -1,4 +1,4 @@
-package com.infinitemule.espn.api.now;
+package com.infinitemule.espn.common.api;
 
 /**
  * 
@@ -10,6 +10,7 @@ public class Image {
   
   private String alt;
   private String name;
+  private String type;
   private String caption;
   private String credit;
   private String url;
@@ -48,6 +49,14 @@ public class Image {
 
   public void setName(String name) {
     this.name = name;
+  }
+    
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
   }
 
   public String getCaption() {

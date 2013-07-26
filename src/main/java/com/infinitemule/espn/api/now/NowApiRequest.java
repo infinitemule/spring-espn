@@ -3,10 +3,14 @@ package com.infinitemule.espn.api.now;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.google.common.base.Joiner;
-import com.infinitemule.espn.common.api.AbstractApiRequestBuilder;
+import com.google.common.collect.Maps;
+import com.infinitemule.espn.common.api.ApiRequest;
 import com.infinitemule.espn.common.api.ApiUrls;
+import com.infinitemule.espn.common.api.ApiUrls.Common;
+import com.infinitemule.espn.common.api.ApiUrls.Now;
 import com.infinitemule.espn.common.api.Content;
 import com.infinitemule.espn.common.api.Language;
 import com.infinitemule.espn.common.api.League;
@@ -24,7 +28,7 @@ import com.infinitemule.espn.common.api.Region;
  * - Only region accepted is GB, if league is soccer.
  * - Teams and groups only accept a single value for now.
  */
-public class NowApiRequest extends AbstractApiRequestBuilder {
+public class NowApiRequest extends ApiRequest {
 
   public static class Disable {
     
@@ -37,8 +41,7 @@ public class NowApiRequest extends AbstractApiRequestBuilder {
     public  String getId()     { return id; }
     
   }
-  
-  
+    
   private League        league;
   private Content       content;
   private List<Disable> disable = new ArrayList<Disable>();
@@ -49,7 +52,7 @@ public class NowApiRequest extends AbstractApiRequestBuilder {
   
   
   public NowApiRequest() {
-    super();
+    
   }
 
   public NowApiRequest now() {
@@ -110,8 +113,8 @@ public class NowApiRequest extends AbstractApiRequestBuilder {
     return this;
   }
   
-  public NowApiRequest lang(Language language) {
-    setLang(language);
+  public NowApiRequest language(Language language) {
+    setLanguage(language);
     return this;
   }
   
@@ -126,6 +129,46 @@ public class NowApiRequest extends AbstractApiRequestBuilder {
     
     return Joiner.on(",").join(ids);
   }
+  
+  @Override
+  public Map<String, String> getQueryParams() {
+
+    Map<String, String> queryParams = Maps.newHashMap();
+    
+    if(isSpecified(getLeague())) {
+      queryParams.put(Now.Params.leagues, getLeague().getId());
+    }
+    
+    if(isSpecified(getGroups())) {
+      queryParams.put(Now.Params.groups, getGroups().toString());
+    }
+    
+    if(isSpecified(getTeams())) {
+      queryParams.put(Now.Params.teams, getTeams().toString());
+    }
+
+    if(isSpecified(getContent())) {
+      queryParams.put(Now.Params.content, getContent().getId());
+    }
+
+    if(isSpecified(getDisable())) {
+      queryParams.put(Now.Params.disable, getDisableList());
+    }
+    
+    if(isSpecified(getLanguage())) {
+      queryParams.put(Common.Params.lang, getLanguage().getAbbr());
+    }
+    
+    if(isSpecified(getRegion())) {
+      queryParams.put(Now.Params.region, getRegion().getId());
+    }
+    
+    queryParams.putAll(createPageableParams());
+    
+    return queryParams;    
+    
+  }
+    
   
   /*
    * 
