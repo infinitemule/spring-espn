@@ -111,6 +111,7 @@ public class ApiUrls {
       public static final String sport  = "sport";
       public static final String league = "league";
       
+      
     }
     
     public static final String all             = "/sports";
@@ -139,4 +140,23 @@ public class ApiUrls {
     
   }
    
+  /*
+   * Athletes API
+   */
+  
+  public class Athletes {
+    
+    public class Params {
+      public static final String id     = "id";
+      public static final String sport  = "sport";
+      public static final String league = "league";
+      public static final String groups = "groups";
+    }
+    
+    public static final String bySport          = Sports.byName + "/athletes";
+    public static final String byAthlete        = Sports.byName + "/athletes/{id}";    
+    public static final String bySportAndLeague = Sports.byNameAndLeague + "/athletes";
+    
+  }
+  
 }

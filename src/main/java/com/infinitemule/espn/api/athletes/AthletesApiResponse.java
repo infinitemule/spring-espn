@@ -1,24 +1,19 @@
-/**
+/*
  * Spring ESPN
  */
-package com.infinitemule.espn.api.teams;
+package com.infinitemule.espn.api.athletes;
 
 import java.util.List;
 
 import com.infinitemule.espn.api.sports.Sport;
 import com.infinitemule.espn.common.api.PageableApiResponse;
 
-/**
- * 
- */
-public class TeamsApiResponse extends PageableApiResponse {
-  
+
+public class AthletesApiResponse extends PageableApiResponse {
+
   private List<Sport> sports;
   
-  public TeamsApiResponse() {
-    
-  }
-
+  
   public List<Sport> getSports() {
     return sports;
   }
@@ -27,5 +22,5 @@ public class TeamsApiResponse extends PageableApiResponse {
     this.sports = sports;
   }
     
-      
+  
 }

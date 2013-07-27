@@ -5,6 +5,7 @@ package com.infinitemule.espn.api.sports;
 
 import java.util.List;
 
+import com.infinitemule.espn.api.athletes.Athlete;
 import com.infinitemule.espn.api.teams.Group;
 import com.infinitemule.espn.api.teams.Team;
 import com.infinitemule.espn.common.api.Country;
@@ -26,8 +27,9 @@ public class League {
   private Season season;
   private Week   week;
   
-  private List<Team>  teams;
-  private List<Group> groups;
+  private List<Team>    teams;
+  private List<Athlete> athletes;
+  private List<Group>   groups;
   
   private String  isTournament;
   private Country country;
@@ -107,6 +109,14 @@ public class League {
 
   public void setTeams(List<Team> teams) {
     this.teams = teams;
+  }
+    
+  public List<Athlete> getAthletes() {
+    return athletes;
+  }
+
+  public void setAthletes(List<Athlete> athletes) {
+    this.athletes = athletes;
   }
 
   public List<Group> getGroups() {
