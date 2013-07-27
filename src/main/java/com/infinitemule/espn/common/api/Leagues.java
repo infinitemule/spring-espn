@@ -1,14 +1,15 @@
 package com.infinitemule.espn.common.api;
 
-public enum League {
+public enum Leagues {
 
   MLB   ("mlb",    "Major Leauge Baseball"),
-  NASCAR("nascar", "NASCAR");
+  NASCAR("nascar", "NASCAR"),
+  NFL   ("nfl",    "NFL");
   
   private String id;
   private String name;
   
-  private League(String id, String name) { 
+  private Leagues(String id, String name) { 
     this.id = id;
     this.name = name;
   }

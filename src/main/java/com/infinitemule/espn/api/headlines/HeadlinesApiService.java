@@ -17,6 +17,6 @@ public interface HeadlinesApiService {
   public HeadlinesApiResponse topHeadlinesForCity(City city);
 
 
-  public HeadlinesApiResponse request(HeadlinesApiRequest request); 
+  public HeadlinesApiResponse call(HeadlinesApiRequest request); 
   
 }

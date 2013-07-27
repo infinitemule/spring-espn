@@ -4,21 +4,24 @@
 package com.infinitemule.espn.api.now.spring;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.infinitemule.espn.api.now.NowApiRequest;
 import com.infinitemule.espn.api.now.NowApiResponse;
 import com.infinitemule.espn.api.now.NowApiService;
-import com.infinitemule.espn.common.api.ApiServiceSpring;
+import com.infinitemule.espn.common.api.ApiService;
 
 /**
  * 
  */
 @Component
-public class NowApiServiceSpring extends    ApiServiceSpring
-                                 implements NowApiService {
+public class NowApiServiceSpring implements NowApiService {
 
+  @Autowired
+  private ApiService service;
     
+  
   public NowApiResponse latest() {
     return latest(10, 0);    
   }
@@ -30,7 +33,7 @@ public class NowApiServiceSpring extends    ApiServiceSpring
   
   public NowApiResponse latest(Integer limit, Integer offset) {
     
-    return request(
+    return call(
       new NowApiRequest()
           .now().limit(limit).offset(offset));
 
@@ -50,7 +53,7 @@ public class NowApiServiceSpring extends    ApiServiceSpring
   
   public NowApiResponse top(Integer limit, Integer offset) {
     
-    return request(
+    return call(
         new NowApiRequest()
             .top().limit(limit).offset(offset));
 
@@ -68,20 +71,15 @@ public class NowApiServiceSpring extends    ApiServiceSpring
   
   public NowApiResponse popular(Integer limit, Integer offset) {
 
-    return request(
+    return call(
         new NowApiRequest()
             .popular().limit(limit).offset(offset));
 
   }
   
-  public NowApiResponse request(NowApiRequest request) {
-    
-    String url = 
-        createUrl(request.getMethod())
-                  .queryParams(request.getQueryParams())
-                  .toString();
-    
-    return callService(url, NowApiResponse.class);
+  @Override
+  public NowApiResponse call(NowApiRequest request) {        
+    return service.call(request, NowApiResponse.class);
   }
       
 }

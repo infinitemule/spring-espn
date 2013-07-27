@@ -7,25 +7,25 @@ import java.util.Map;
 
 import com.google.common.base.Joiner;
 
-import com.infinitemule.espn.common.api.ApiRequest;
+import com.infinitemule.espn.common.api.AbstractApiRequest;
 import com.infinitemule.espn.common.api.ApiUrls.Headlines;
 import com.infinitemule.espn.common.api.City;
 import com.infinitemule.espn.common.api.FantasySport;
 import com.infinitemule.espn.common.api.Insider;
-import com.infinitemule.espn.common.api.League;
+import com.infinitemule.espn.common.api.Leagues;
 import com.infinitemule.espn.common.api.Region;
-import com.infinitemule.espn.common.api.Sport;
+import com.infinitemule.espn.common.api.Sports;
 
 
 
-public class HeadlinesApiRequest extends ApiRequest {
+public class HeadlinesApiRequest extends AbstractApiRequest {
   
   private String type;
   
   private City city;
   private FantasySport fantasySport;
-  private Sport  sport;
-  private League league;
+  private Sports  sport;
+  private Leagues league;
   
   private Integer id;
   private Integer teamId;
@@ -82,13 +82,13 @@ public class HeadlinesApiRequest extends ApiRequest {
     return this;
   }
   
-  public HeadlinesApiRequest forSport(Sport sport) {
+  public HeadlinesApiRequest forSport(Sports sport) {
     setMethod(Headlines.bySport + getType());
     setSport(sport);
     return this;
   }
 
-  public HeadlinesApiRequest forSport(Sport sport, League league) {
+  public HeadlinesApiRequest forSport(Sports sport, Leagues league) {
     setMethod(Headlines.bySportAndLeague + getType());
     setSport(sport);
     setLeague(league);
@@ -302,19 +302,19 @@ public class HeadlinesApiRequest extends ApiRequest {
     this.region = region;
   }
 
-  public Sport getSport() {
+  public Sports getSport() {
     return sport;
   }
 
-  public void setSport(Sport sport) {
+  public void setSport(Sports sport) {
     this.sport = sport;
   }
 
-  public League getLeague() {
+  public Leagues getLeague() {
     return league;
   }
 
-  public void setLeague(League league) {
+  public void setLeague(Leagues league) {
     this.league = league;
   }
 

@@ -101,10 +101,17 @@ public class ApiUrls {
   
   
   /*
-   * Sports API
+   * Sports API (called the Helper API by ESPN)
    */
   
   public class Sports {
+    
+    public class Params {
+      
+      public static final String sport  = "sport";
+      public static final String league = "league";
+      
+    }
     
     public static final String all             = "/sports";
     public static final String byName          = "/sports/{sport}";
@@ -112,8 +119,22 @@ public class ApiUrls {
     
   }
   
+  /*
+   * Teams API
+   */
+  
   public class Teams {
     
+    public class Params {
+      
+      public static final String sport   = "sport";
+      public static final String league  = "league";
+      public static final String groups  = "groups";
+      public static final String options = "options";
+      
+    }
+    
+    public static final String bySport          = Sports.byName + "/teams";
     public static final String bySportAndLeague = Sports.byNameAndLeague + "/teams";
     
   }

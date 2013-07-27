@@ -6,7 +6,7 @@ package com.infinitemule.espn.common.api;
 /**
  * 
  */
-public abstract class PageableApiRequest extends ApiRequest {
+public abstract class PageableApiRequest extends AbstractApiRequest {
 
   private Integer limit  = null;
   private Integer offset = null;

@@ -22,6 +22,6 @@ public interface NowApiService {
   public NowApiResponse popular(Integer limit);
   public NowApiResponse popular(Integer limit, Integer offset);
   
-  public NowApiResponse request(NowApiRequest request);
+  public NowApiResponse call(NowApiRequest request);
   
 }

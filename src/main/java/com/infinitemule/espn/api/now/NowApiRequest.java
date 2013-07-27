@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Maps;
-import com.infinitemule.espn.common.api.ApiRequest;
+import com.infinitemule.espn.common.api.AbstractApiRequest;
 import com.infinitemule.espn.common.api.ApiUrls;
 import com.infinitemule.espn.common.api.ApiUrls.Common;
 import com.infinitemule.espn.common.api.ApiUrls.Now;
@@ -27,7 +27,7 @@ import com.infinitemule.espn.common.api.Region;
  * - Only region accepted is GB, if league is soccer.
  * - Teams and groups only accept a single value for now.
  */
-public class NowApiRequest extends ApiRequest {
+public class NowApiRequest extends AbstractApiRequest {
     
   private NowLeague     league;
   private Content       content;

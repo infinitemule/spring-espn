@@ -1,6 +1,6 @@
 package com.infinitemule.espn.common.api;
 
-public enum Sport {
+public enum Sports {
 
   ActionSports("action-sports", "Action Sports"),
   Baseball    ("baseball",      "Baseball"),
@@ -19,7 +19,7 @@ public enum Sport {
   private String id;
   private String name;
   
-  private Sport(String id, String name) { 
+  private Sports(String id, String name) { 
     this.id = id;
     this.name = name;
   }

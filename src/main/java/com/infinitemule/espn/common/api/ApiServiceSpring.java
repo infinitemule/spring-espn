@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
  * 
  */
 @Component
-public abstract class ApiServiceSpring extends AbstractApiService implements ApiService {
+public class ApiServiceSpring extends AbstractApiService implements ApiService {
 
   
   @Autowired
@@ -27,11 +27,27 @@ public abstract class ApiServiceSpring extends AbstractApiService implements Api
            
   }
   
+  /**
+   * 
+   */
+  @Override
+  public <T extends ApiResponse> T call(ApiRequest request, Class<T> responseType) {
+    
+    String url = 
+        createUrl(request.getMethod())
+                  .urlParams(request.getUrlParams())
+                  .queryParams(request.getQueryParams())
+                  .toString();
+    
+    return call(url, responseType);
+  }
+  
   
   /**
    * 
    */
-  public <T extends ApiResponse> T callService(String url, Class<T> responseType) {
+  @Override
+  public <T extends ApiResponse> T call(String url, Class<T> responseType) {
   
     ResponseEntity<String> entity = restTemplate.getForEntity(url, String.class);
           

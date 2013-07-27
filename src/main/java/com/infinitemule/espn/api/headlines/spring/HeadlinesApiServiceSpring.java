@@ -3,12 +3,13 @@
  */
 package com.infinitemule.espn.api.headlines.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.infinitemule.espn.api.headlines.HeadlinesApiRequest;
 import com.infinitemule.espn.api.headlines.HeadlinesApiResponse;
 import com.infinitemule.espn.api.headlines.HeadlinesApiService;
-import com.infinitemule.espn.common.api.ApiServiceSpring;
+import com.infinitemule.espn.common.api.ApiService;
 import com.infinitemule.espn.common.api.City;
 
 
@@ -16,47 +17,40 @@ import com.infinitemule.espn.common.api.City;
  * 
  */
 @Component
-public class HeadlinesApiServiceSpring extends    ApiServiceSpring 
-                                       implements HeadlinesApiService {
+public class HeadlinesApiServiceSpring implements HeadlinesApiService {
   
+  @Autowired
+  private ApiService service;
   
   public HeadlinesApiResponse newsForAllCities() {
-    return request(new HeadlinesApiRequest().news().forCities());
+    return call(new HeadlinesApiRequest().news().forCities());
   }
   
   public HeadlinesApiResponse headlinesForAllCities() {
-    return request(new HeadlinesApiRequest().headlines().forCities());
+    return call(new HeadlinesApiRequest().headlines().forCities());
   }
 
   public HeadlinesApiResponse topHeadlinesForAllCities() {
-    return request(new HeadlinesApiRequest().topHeadlines().forCities());
+    return call(new HeadlinesApiRequest().topHeadlines().forCities());
   }
 
  
   public HeadlinesApiResponse newsForCity(City city) {
-    return request(new HeadlinesApiRequest().news().forCity(city));
+    return call(new HeadlinesApiRequest().news().forCity(city));
   }
 
   public HeadlinesApiResponse headlinesForCity(City city) {
-    return request(new HeadlinesApiRequest().headlines().forCity(city));
+    return call(new HeadlinesApiRequest().headlines().forCity(city));
   }
 
   public HeadlinesApiResponse topHeadlinesForCity(City city) {
-    return request(new HeadlinesApiRequest().topHeadlines().forCity(city));
+    return call(new HeadlinesApiRequest().topHeadlines().forCity(city));
   }
 
   
-  
-  public HeadlinesApiResponse request(HeadlinesApiRequest request) {
-    
-    String url = 
-        createUrl(request.getMethod())
-                  .urlParams(request.getUrlParams())
-                  .queryParams(request.getQueryParams())
-                  .toString();
-    
-   return callService(url, HeadlinesApiResponse.class);
-    
+  @Override
+  public HeadlinesApiResponse call(HeadlinesApiRequest request) {        
+   return service.call(request, HeadlinesApiResponse.class);    
   }
   
 }
