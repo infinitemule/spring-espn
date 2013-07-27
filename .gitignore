@@ -24,5 +24,9 @@
 
 target/
 
+# Don't add API key to git!
+api-key.txt
+
 # Ignore integration tests for now
 src/intg
+

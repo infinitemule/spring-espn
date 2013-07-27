@@ -109,5 +109,17 @@
       <scope>test</scope> 
     </dependency>      
   </dependencies>
-     
+
+
+  <build>
+    <filters>
+      <filter>api-key.txt</filter>
+    </filters>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>  
+  </build>         
 </project>
