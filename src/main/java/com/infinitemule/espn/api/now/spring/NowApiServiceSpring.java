@@ -4,23 +4,19 @@
 package com.infinitemule.espn.api.now.spring;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.infinitemule.espn.api.now.NowApiRequest;
 import com.infinitemule.espn.api.now.NowApiResponse;
 import com.infinitemule.espn.api.now.NowApiService;
-import com.infinitemule.espn.common.api.ApiService;
+import com.infinitemule.espn.common.api.EspnApiServiceSpring;
 
 /**
  * 
  */
 @Component
-public class NowApiServiceSpring implements NowApiService {
-
-  @Autowired
-  private ApiService service;
-    
+public class NowApiServiceSpring extends EspnApiServiceSpring 
+                                 implements NowApiService {    
   
   public NowApiResponse latest() {
     return latest(10, 0);    
@@ -79,7 +75,7 @@ public class NowApiServiceSpring implements NowApiService {
   
   @Override
   public NowApiResponse call(NowApiRequest request) {        
-    return service.call(request, NowApiResponse.class);
+    return call(request, NowApiResponse.class);
   }
       
 }

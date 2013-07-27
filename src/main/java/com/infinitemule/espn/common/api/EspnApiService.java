@@ -14,7 +14,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 /**
  * 
  */
-public abstract class AbstractApiService implements ApiService {
+public abstract class EspnApiService implements ApiService {
   
   @Value("${espn.api-key}")
   private String apiKey;  

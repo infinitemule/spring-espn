@@ -3,31 +3,27 @@
  */
 package com.infinitemule.espn.api.sports.spring;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.infinitemule.espn.api.sports.SportsApiRequest;
 import com.infinitemule.espn.api.sports.SportsApiResponse;
 import com.infinitemule.espn.api.sports.SportsApiService;
-import com.infinitemule.espn.common.api.ApiService;
+import com.infinitemule.espn.common.api.EspnApiServiceSpring;
 
 
 /**
  * 
  */
 @Component
-public class SportsApiServiceSpring  implements SportsApiService {
+public class SportsApiServiceSpring extends    EspnApiServiceSpring  
+                                    implements SportsApiService {
 
-  
-  @Autowired
-  private ApiService service;
-  
-  
+    
   /**
    * 
    */ 
   public SportsApiResponse call(SportsApiRequest request) {        
-    return service.call(request, SportsApiResponse.class);
+    return call(request, SportsApiResponse.class);
   }
 
 }

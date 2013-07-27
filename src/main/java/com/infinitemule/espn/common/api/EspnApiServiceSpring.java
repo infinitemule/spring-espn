@@ -7,7 +7,6 @@ package com.infinitemule.espn.common.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 
@@ -15,15 +14,14 @@ import org.springframework.web.client.RestTemplate;
 /**
  * 
  */
-@Component
-public class ApiServiceSpring extends AbstractApiService implements ApiService {
+public abstract class EspnApiServiceSpring extends EspnApiService implements ApiService {
 
   
   @Autowired
   private RestTemplate restTemplate = null;  
   
   
-  public ApiServiceSpring() {
+  public EspnApiServiceSpring() {
            
   }
   
