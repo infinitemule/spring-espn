@@ -1,3 +1,6 @@
+/*
+ * Spring ESPN
+ */
 package com.infinitemule.espn.api.headlines;
 
 public class HeadlineRelated {

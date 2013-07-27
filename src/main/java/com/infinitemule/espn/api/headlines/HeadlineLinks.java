@@ -1,3 +1,6 @@
+/*
+ * Spring ESPN
+ */
 package com.infinitemule.espn.api.headlines;
 
 import com.infinitemule.espn.common.api.ApiLinks;

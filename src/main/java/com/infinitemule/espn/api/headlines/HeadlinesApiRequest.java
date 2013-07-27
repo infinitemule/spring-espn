@@ -19,22 +19,6 @@ import com.infinitemule.espn.common.api.Sport;
 
 
 public class HeadlinesApiRequest extends ApiRequest {
-
-  public enum Disable {
-    
-    Audio      ("audio"),
-    Categories ("categories"),    
-    Keywords   ("keywords"),
-    MobileStory("mobileStory"),
-    Related    ("related"),
-    Story      ("story");
-    
-    private String id;
-    private Disable(String id) { this.id = id; }
-    public  String getId()     { return id; }
-    
-  }
-
   
   private String type;
   

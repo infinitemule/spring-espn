@@ -28,20 +28,8 @@ import com.infinitemule.espn.common.api.Region;
  * - Teams and groups only accept a single value for now.
  */
 public class NowApiRequest extends ApiRequest {
-
-  public static class Disable {
     
-    public static final Disable BreakingNews = new Disable("breakingnews");
-    public static final Disable Metrics      = new Disable("metrics");
-    public static final Disable Categories   = new Disable("categories");
-    
-    private String id;
-    private Disable(String id) { this.id = id; }
-    public  String getId()     { return id; }
-    
-  }
-    
-  private League        league;
+  private NowLeague     league;
   private Content       content;
   private List<Disable> disable = new ArrayList<Disable>();
 
@@ -70,7 +58,7 @@ public class NowApiRequest extends ApiRequest {
   }
 
   
-  public NowApiRequest league(League league) {
+  public NowApiRequest league(NowLeague league) {
     setLeague(league);
     return this;
   }
@@ -189,11 +177,11 @@ public class NowApiRequest extends ApiRequest {
     this.teams = teams;
   }
 
-  public League getLeague() {
+  public NowLeague getLeague() {
     return league;
   }
 
-  public void setLeague(League league) {
+  public void setLeague(NowLeague league) {
     this.league = league;
   }
 
