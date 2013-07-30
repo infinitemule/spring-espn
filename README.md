@@ -4,9 +4,8 @@ Spring ESPN
 Spring / Java library for accessing the [ESPN API](http://developer.espn.com/).
 
 ### Notes
-- Create a file called `api-key.txt` in the root directory and specify your API key as 
-`api-key=<your_api_key_here>`.  Maven will then filter resources based on the file 
-so you don't have to store your API key in git.
+- Create a file called `espn-api-key.properties` in the classpath of your application with a property  
+`espn.api-key=<your_api_key_here>`.  Do not store your API key in git or any SCM.  
 - Only the public APIs are implemented, I can't test the partner, premium partner,
 or ESPN access tiers so I didn't bother implementing them.
 - All option combinations should be implemented but I need to go back to each
@@ -15,7 +14,8 @@ service and make sure
 an exception in production on new fields, it will just ignore them.  Set it to `true` 
 in development so that you get an exception on an unrecognized field, which will tell you 
 that ESPN updated their API.
-- I still need to add examples on how to use the services.
+- I still need to add examples on how to use the services.  Currently, you can find some
+in the [integration tests](https://github.com/infinitemule/spring-espn-intg-test)
 - Error handling is not very robust. 
 
 Contact me with any questions or feedback.
