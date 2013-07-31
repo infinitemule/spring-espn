@@ -5,6 +5,7 @@ package com.infinitemule.espn.common.api;
 
 
 import static com.infinitemule.espn.common.lang.Booleans.not;
+import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -108,6 +109,10 @@ public class UrlBuilder {
   
   @Override
   public String toString() {
+    
+    if(isEmpty(apiKey)) {
+      throw new ApiUrlException("API key must be specified.");
+    }
     
     // EN is the default, so we don't need to specify it.
     if(not(language.equals(Language.English.getAbbr()))) {
