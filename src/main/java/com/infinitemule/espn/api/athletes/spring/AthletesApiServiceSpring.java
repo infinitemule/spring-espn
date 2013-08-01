@@ -11,7 +11,7 @@ import com.infinitemule.espn.common.api.EspnApiServiceSpring;
  * 
  */
 @Component
-public class AtheletesApiServiceSpring extends    EspnApiServiceSpring 
+public class AthletesApiServiceSpring extends    EspnApiServiceSpring 
                                        implements AthletesApiService {
 
   @Override
