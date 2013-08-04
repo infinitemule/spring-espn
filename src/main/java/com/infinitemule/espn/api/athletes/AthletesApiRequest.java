@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.infinitemule.espn.common.api.AbstractApiRequest;
 import com.infinitemule.espn.common.api.ApiUrls;
+import com.infinitemule.espn.common.api.Groups;
 import com.infinitemule.espn.common.api.Leagues;
 import com.infinitemule.espn.common.api.Sports;
 
@@ -19,7 +20,7 @@ public class AthletesApiRequest extends AbstractApiRequest {
   private Sports  sport;
   private Leagues league;
   
-  private Integer groups;
+  private Groups groups;
   
   
   public AthletesApiRequest() {
@@ -45,7 +46,7 @@ public class AthletesApiRequest extends AbstractApiRequest {
     return this;
   }
   
-  public AthletesApiRequest groups(Integer groups) {
+  public AthletesApiRequest groups(Groups groups) {
     setGroups(groups);
     return this;
   }
@@ -79,7 +80,7 @@ public class AthletesApiRequest extends AbstractApiRequest {
     Map<String, String> queryParams = super.getQueryParams();
   
     if(isSpecified(getGroups())) {
-      queryParams.put(ApiUrls.Athletes.Params.groups, getGroups().toString());
+      queryParams.put(ApiUrls.Athletes.Params.groups, getGroups().getId().toString());
     }
 
     return queryParams;
@@ -110,11 +111,11 @@ public class AthletesApiRequest extends AbstractApiRequest {
     this.athleteId = athleteId;
   }
 
-  public Integer getGroups() {
+  public Groups getGroups() {
     return groups;
   }
 
-  public void setGroups(Integer groups) {
+  public void setGroups(Groups groups) {
     this.groups = groups;
   }
     
