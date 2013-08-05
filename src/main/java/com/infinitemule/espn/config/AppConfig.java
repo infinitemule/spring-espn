@@ -1,5 +1,5 @@
-/**
- * 
+/*
+ * Spring ESPN
  */
 package com.infinitemule.espn.config;
 
@@ -14,14 +14,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.infinitemule.espn.common.api.ApiResponseErrorHandler;
 
 
-
-
 @Configuration
 @ComponentScan({"com.infinitemule.espn"})
 @PropertySource({"classpath:espn-spring.properties"})
 public class AppConfig extends AbstractAppConfig {
 
-    
+
+  /**
+   * Jackson Object Mapper for JSON marshaling.  
+   */
   @Bean
   public ObjectMapper mapper() {
         
@@ -33,6 +34,10 @@ public class AppConfig extends AbstractAppConfig {
     return objectMapper; 
   }
   
+  
+  /**
+   * Spring REST Template used for API requests
+   */
   @Bean
   public RestTemplate restTemplate() {
     

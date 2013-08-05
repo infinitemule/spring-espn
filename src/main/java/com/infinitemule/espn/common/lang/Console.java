@@ -1,4 +1,8 @@
+/*
+ * Spring ESPN
+ */
 package com.infinitemule.espn.common.lang;
+
 
 public class Console {
 

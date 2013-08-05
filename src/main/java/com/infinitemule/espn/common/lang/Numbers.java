@@ -1,5 +1,5 @@
 /*
- * 
+ * Spring ESPN
  */
 package com.infinitemule.espn.common.lang;
 
