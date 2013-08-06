@@ -27,6 +27,8 @@ public class NewsCategory {
   private Integer fantasyPlayerId;
   private Integer fantasyTeamId;   
   
+  private Integer columnId;
+  
   
   public NewsCategory() {
     
@@ -143,5 +145,13 @@ public class NewsCategory {
   public void setFantasyTeamId(Integer fantasyTeamId) {
     this.fantasyTeamId = fantasyTeamId;
   }
-        
+
+  public Integer getColumnId() {
+    return columnId;
+  }
+
+  public void setColumnId(Integer columnId) {
+    this.columnId = columnId;
+  }
+    
 }
