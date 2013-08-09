@@ -19,15 +19,6 @@ import com.infinitemule.espn.common.api.EspnApiServiceSpring;
 @Component
 public class HeadlinesApiServiceSpring extends    EspnApiServiceSpring 
                                        implements HeadlinesApiService {
-  
-  public HeadlinesApiResponse newsForAllCities() {
-    return call(new HeadlinesApiRequest().news().forCities());
-  }
-  
-  public HeadlinesApiResponse headlinesForAllCities() {
-    return call(new HeadlinesApiRequest().headlines().forCities());
-  }
-
 
  
   public HeadlinesApiResponse newsForCity(City city) {
