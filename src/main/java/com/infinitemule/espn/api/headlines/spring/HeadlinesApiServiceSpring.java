@@ -28,9 +28,6 @@ public class HeadlinesApiServiceSpring extends    EspnApiServiceSpring
     return call(new HeadlinesApiRequest().headlines().forCities());
   }
 
-  public HeadlinesApiResponse topHeadlinesForAllCities() {
-    return call(new HeadlinesApiRequest().topHeadlines().forCities());
-  }
 
  
   public HeadlinesApiResponse newsForCity(City city) {
@@ -41,9 +38,6 @@ public class HeadlinesApiServiceSpring extends    EspnApiServiceSpring
     return call(new HeadlinesApiRequest().headlines().forCity(city));
   }
 
-  public HeadlinesApiResponse topHeadlinesForCity(City city) {
-    return call(new HeadlinesApiRequest().topHeadlines().forCity(city));
-  }
 
   
   @Override

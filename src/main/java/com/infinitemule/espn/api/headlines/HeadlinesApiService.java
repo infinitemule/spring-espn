@@ -9,12 +9,10 @@ public interface HeadlinesApiService {
 
   
   public HeadlinesApiResponse newsForAllCities();
-  public HeadlinesApiResponse headlinesForAllCities();
-  public HeadlinesApiResponse topHeadlinesForAllCities();
+  public HeadlinesApiResponse headlinesForAllCities();  
 
   public HeadlinesApiResponse newsForCity(City city);
-  public HeadlinesApiResponse headlinesForCity(City city);
-  public HeadlinesApiResponse topHeadlinesForCity(City city);
+  public HeadlinesApiResponse headlinesForCity(City city);  
 
 
   public HeadlinesApiResponse call(HeadlinesApiRequest request); 
