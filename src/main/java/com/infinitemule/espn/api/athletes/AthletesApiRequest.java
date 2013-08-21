@@ -8,8 +8,10 @@ import java.util.Map;
 import com.infinitemule.espn.common.api.AbstractApiRequest;
 import com.infinitemule.espn.common.api.ApiUrls;
 import com.infinitemule.espn.common.api.Groups;
+import com.infinitemule.espn.common.api.Language;
 import com.infinitemule.espn.common.api.Leagues;
 import com.infinitemule.espn.common.api.Sports;
+import com.infinitemule.espn.common.api.ApiUrls.Common;
 
 /**
  * 
@@ -51,6 +53,11 @@ public class AthletesApiRequest extends AbstractApiRequest {
     return this;
   }
   
+  public AthletesApiRequest language(Language language) {
+    setLanguage(language);
+    return this;
+  }
+  
   
   @Override
   public Map<String, String> getUrlParams() {
@@ -69,7 +76,6 @@ public class AthletesApiRequest extends AbstractApiRequest {
       urlParams.put(ApiUrls.Athletes.Params.id, getAthleteId().toString());
     }
     
-    
     return urlParams;
     
   }
@@ -82,6 +88,11 @@ public class AthletesApiRequest extends AbstractApiRequest {
     if(isSpecified(getGroups())) {
       queryParams.put(ApiUrls.Athletes.Params.groups, getGroups().getId().toString());
     }
+    
+    if(isSpecified(getLanguage())) {
+      queryParams.put(Common.Params.lang, getLanguage().getAbbr());
+    }
+    
 
     return queryParams;
   }
