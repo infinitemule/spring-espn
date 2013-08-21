@@ -30,7 +30,7 @@ import com.infinitemule.espn.common.api.Region;
 public class NowApiRequest extends AbstractApiRequest {
     
   private NowLeague     league;
-  private Content       content;
+  private List<Content> content;
   private List<Disable> disable = new ArrayList<Disable>();
 
   private Integer teams;  
@@ -73,8 +73,8 @@ public class NowApiRequest extends AbstractApiRequest {
     return this;
   }
     
-  public NowApiRequest content(Content content) {
-    setContent(content);
+  public NowApiRequest content(Content... content) {
+    setContent(Arrays.asList(content));
     return this;
   }
 
@@ -103,6 +103,18 @@ public class NowApiRequest extends AbstractApiRequest {
   public NowApiRequest language(Language language) {
     setLanguage(language);
     return this;
+  }
+  
+  
+  public String getContentList() {
+    
+    List<String> ids = new ArrayList<String>();
+    
+    for(Content c: content) {
+      ids.add(c.getId());
+    }
+    
+    return Joiner.on(",").join(ids);
   }
   
   
@@ -135,7 +147,7 @@ public class NowApiRequest extends AbstractApiRequest {
     }
 
     if(isSpecified(getContent())) {
-      queryParams.put(Now.Params.content, getContent().getId());
+      queryParams.put(Now.Params.content, getContentList());
     }
 
     if(isSpecified(getDisable())) {
@@ -185,11 +197,11 @@ public class NowApiRequest extends AbstractApiRequest {
     this.league = league;
   }
 
-  public Content getContent() {
+  public List<Content> getContent() {
     return content;
   }
 
-  public void setContent(Content content) {
+  public void setContent(List<Content> content) {
     this.content = content;
   }
 
