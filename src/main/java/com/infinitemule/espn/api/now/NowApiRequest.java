@@ -42,8 +42,8 @@ public class NowApiRequest extends AbstractApiRequest {
     
   }
 
-  public NowApiRequest now() {
-    setMethod(ApiUrls.Now.now);
+  public NowApiRequest latest() {
+    setMethod(ApiUrls.Now.latest);
     return this;
   }
   

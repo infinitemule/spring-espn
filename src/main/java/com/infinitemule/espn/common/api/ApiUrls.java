@@ -38,9 +38,9 @@ public class ApiUrls {
   
   public class Now {
     
-    public static final String now     = "/now";
-    public static final String top     = now + "/top";
-    public static final String popular = now+ "/popular";
+    public static final String latest  = "/now";
+    public static final String top     = latest  + "/top";
+    public static final String popular = latest + "/popular";
     
     public class Params {
       
