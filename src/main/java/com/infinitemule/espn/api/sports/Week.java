@@ -10,8 +10,9 @@ public class Week {
 
   private Integer number;
   
-  private String  startDate;
-  private String  endDate;
+  private String startDate;
+  private String endDate;
+  private String text; 
 
   public Week() {
         
@@ -39,6 +40,14 @@ public class Week {
 
   public void setEndDate(String endDate) {
     this.endDate = endDate;
+  }
+
+  public String getText() {
+    return text;
+  }
+
+  public void setText(String text) {
+    this.text = text;
   }  
-  
+    
 }
