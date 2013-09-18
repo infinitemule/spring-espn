@@ -10,6 +10,9 @@ public class Video {
   
   private VideoLinks links;
 
+  private Tracking tracking;
+  
+  
   public Integer getId() {
     return id;
   }
@@ -49,5 +52,13 @@ public class Video {
   public void setLinks(VideoLinks links) {
     this.links = links;
   }
-    
+
+  public Tracking getTracking() {
+    return tracking;
+  }
+
+  public void setTracking(Tracking tracking) {
+    this.tracking = tracking;
+  }
+   
 }
