@@ -43,4 +43,8 @@ public class Teams {
     public static final Integer TB  = 30;
     
   }
+  
+  public static class NFL {
+    public static final Integer NE  = 17;  
+  }
 }
