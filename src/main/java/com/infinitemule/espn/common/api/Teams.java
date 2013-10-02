@@ -45,6 +45,16 @@ public class Teams {
   }
   
   public static class NFL {
+    public static final Integer ATL =  1;
+    public static final Integer BUF =  2;
+    public static final Integer CHI =  3;
+    public static final Integer CIN =  4;
+    public static final Integer CLE =  5;
+    public static final Integer DAL =  6;
+    public static final Integer DEN =  7;
+    public static final Integer DET =  8;
+    public static final Integer GB  =  9;
+    public static final Integer TEN = 10;
     public static final Integer NE  = 17;  
   }
 }
