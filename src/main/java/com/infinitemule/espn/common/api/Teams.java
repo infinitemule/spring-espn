@@ -45,6 +45,7 @@ public class Teams {
   }
   
   public static class NFL {
+    
     public static final Integer ATL =  1;
     public static final Integer BUF =  2;
     public static final Integer CHI =  3;
@@ -55,6 +56,27 @@ public class Teams {
     public static final Integer DET =  8;
     public static final Integer GB  =  9;
     public static final Integer TEN = 10;
-    public static final Integer NE  = 17;  
+    public static final Integer IND = 11;
+    public static final Integer KC  = 12;
+    public static final Integer OAK = 13;
+    public static final Integer STL = 14;
+    public static final Integer MIA = 15;
+    public static final Integer MIN = 16;
+    public static final Integer NE  = 17;
+    public static final Integer NO  = 18;
+    public static final Integer NYG = 19;
+    public static final Integer NYJ = 20;
+    public static final Integer PHI = 21;
+    public static final Integer ARI = 22;
+    public static final Integer PIT = 23;
+    public static final Integer SD  = 24;
+    public static final Integer SF  = 25;
+    public static final Integer SEA = 26;
+    public static final Integer TB  = 27;
+    public static final Integer WSH = 28;
+    public static final Integer CAR = 29;
+    public static final Integer JAC = 30;
+    public static final Integer BAL = 33;
+    public static final Integer HOU = 34;
   }
 }
