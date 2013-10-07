@@ -79,4 +79,38 @@ public class Teams {
     public static final Integer BAL = 33;
     public static final Integer HOU = 34;
   }
+  
+  public static class NHL {
+
+    public static final Integer BOS = 1;
+    public static final Integer BUF = 2;
+    public static final Integer CGY = 3;
+    public static final Integer CHI = 4;
+    public static final Integer DET = 5;
+    public static final Integer EDM = 6;
+    public static final Integer CAR = 7;
+    public static final Integer LA  = 8;
+    public static final Integer DAL = 9;
+    public static final Integer MTL = 10;
+    public static final Integer NJ  = 11;
+    public static final Integer NYI = 12;
+    public static final Integer NYR = 13;
+    public static final Integer OTT = 14;
+    public static final Integer PHI = 15;
+    public static final Integer PIT = 16;
+    public static final Integer COL = 17;
+    public static final Integer SJ  = 18;
+    public static final Integer STL = 19;
+    public static final Integer TB  = 20;
+    public static final Integer TOR = 21;
+    public static final Integer VAN = 22;
+    public static final Integer WSH = 23;
+    public static final Integer PHX = 24;
+    public static final Integer ANA = 25;
+    public static final Integer FLA = 26;
+    public static final Integer NSH = 27;
+    public static final Integer WPG = 28;
+    public static final Integer CBJ = 29;
+    public static final Integer MIN = 30;    
+  }
 }
