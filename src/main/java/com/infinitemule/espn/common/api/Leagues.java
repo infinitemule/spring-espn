@@ -4,9 +4,9 @@ public enum Leagues {
 
   MLB   ("mlb",    "Major Leauge Baseball"),
   NASCAR("nascar", "NASCAR"),
-  NBA   ("nba",    "NBA"),
-  NHL   ("nhl",    "NHL"),
-  NFL   ("nfl",    "NFL");
+  NBA   ("nba",    "National Basketball Association"),
+  NHL   ("nhl",    "National Hockey Leauge"),
+  NFL   ("nfl",    "National Football League");
   
   private String id;
   private String name;
