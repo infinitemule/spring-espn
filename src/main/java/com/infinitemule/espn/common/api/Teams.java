@@ -113,4 +113,38 @@ public class Teams {
     public static final Integer CBJ = 29;
     public static final Integer MIN = 30;    
   }
+  
+  public static class NBA {
+    
+    public static final Integer ATL  = 1;
+    public static final Integer BOS  = 2;
+    public static final Integer NO   = 3;
+    public static final Integer CHI  = 4;
+    public static final Integer CLE  = 5;
+    public static final Integer DAL  = 6;
+    public static final Integer DEN  = 7;
+    public static final Integer DET  = 8;
+    public static final Integer GS   = 9;
+    public static final Integer HOU  = 10;
+    public static final Integer IND  = 11;
+    public static final Integer LAC  = 12;
+    public static final Integer LAL  = 13;
+    public static final Integer MIA  = 14;
+    public static final Integer MIL  = 15;
+    public static final Integer MIN  = 16;
+    public static final Integer BKN  = 17;
+    public static final Integer NY   = 18;
+    public static final Integer ORL  = 19;
+    public static final Integer PHI  = 20;
+    public static final Integer PHX  = 21;
+    public static final Integer POR  = 22;
+    public static final Integer SAC  = 23;
+    public static final Integer SA   = 24;
+    public static final Integer OKC  = 25;
+    public static final Integer UTAH = 26;
+    public static final Integer WSH  = 27;
+    public static final Integer TOR  = 28;
+    public static final Integer MEM  = 29;
+    public static final Integer CHA  = 30;
+  }
 }
