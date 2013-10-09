@@ -7,6 +7,7 @@ package com.infinitemule.espn.common.api;
 public class NewsCategory {
   
   private String uid;
+  private String groupId;
   private String description;
   private String type;
   
@@ -48,6 +49,14 @@ public class NewsCategory {
 
   public void setType(String type) {
     this.type = type;
+  }
+    
+  public String getGroupId() {
+    return groupId;
+  }
+
+  public void setGroupId(String groupId) {
+    this.groupId = groupId;
   }
 
   public Integer getSportId() {
