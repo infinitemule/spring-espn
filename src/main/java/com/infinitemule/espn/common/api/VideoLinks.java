@@ -3,14 +3,14 @@ package com.infinitemule.espn.common.api;
 
 public class VideoLinks {
 
-  private Link web;
+  private VideoWebLinks web;
 
-  public Link getWeb() {
+  public VideoWebLinks getWeb() {
     return web;
   }
 
-  public void setWeb(Link web) {
+  public void setWeb(VideoWebLinks web) {
     this.web = web;
   }
-    
+  
 }
